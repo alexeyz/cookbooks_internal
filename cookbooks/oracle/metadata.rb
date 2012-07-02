@@ -18,6 +18,7 @@ recipe "oracle::tune_oracle_memory", "tunes oracle memory to 60% of available ra
 
 depends "rightscale"
 depends "bootstrap"
+depends "block_device"
 
 attribute "oracle/starterdb/password/all", 
   :display_name => "Starterdb ALL Password",

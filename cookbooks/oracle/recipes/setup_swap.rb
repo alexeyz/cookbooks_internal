@@ -11,6 +11,11 @@ total_memory = `grep MemTotal /proc/meminfo | awk '{print $2}'`.strip
 swap_size = (total_memory.to_i/1024)+128
 swap_file = '/mnt/ephemeral/swapfile'
 
+if node[:cloud] == "rackspace"
+  include_recipe "block_device::setup_block_device"
+  swap_file = '/mnt/storage1/swapfile'
+end
+
 def clean_swap(swap_file)
 
   # Turn off swap on swap_file if turned on
