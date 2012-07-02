@@ -16,7 +16,7 @@ recipe "oracle::add_backup_to_cron", "add the backup script to cron at a random 
 recipe "oracle::add_audit_user", "add_audit_user"
 recipe "oracle::tune_oracle_memory", "tunes oracle memory to 60% of available ram"
 
-depends "rs_utils"
+depends "rightscale"
 depends "bootstrap"
 
 attribute "oracle/starterdb/password/all", 
